@@ -104,6 +104,22 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Pinterest login button */
+        .login-btn {
+            background: #e60023;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #c5051c;
+        }
+
         .features {
             padding: 4rem 0;
             background: #f8f9fa;
@@ -248,11 +264,9 @@
             .hero h1 {
                 font-size: 2rem;
             }
-            
             .hero p {
                 font-size: 1.1rem;
             }
-            
             nav ul {
                 flex-direction: column;
                 align-items: center;
@@ -293,6 +307,11 @@
                 <p><strong>Application ID:</strong> 1532175</p>
                 <p><strong>Company:</strong> FLr</p>
                 <p><strong>Purpose:</strong> Pinterest API Integration for Content Management</p>
+            </div>
+
+            <!-- Pinterest Login Button -->
+            <div style="margin-top:2rem;">
+                <button class="login-btn" onclick="loginPinterest()">Login with Pinterest</button>
             </div>
         </div>
     </section>
@@ -349,16 +368,6 @@
                         <p>Individual users who want to better manage their Pinterest presence and content</p>
                     </div>
                 </div>
-
-                <h3>Specific Functionality Includes:</h3>
-                <ul style="margin: 1rem 0; padding-left: 2rem;">
-                    <li><strong>Pin Creation and Scheduled Publishing:</strong> Create and schedule Pins to publish at optimal times</li>
-                    <li><strong>Content Publishing on Pinterest:</strong> Streamlined content publishing workflow</li>
-                    <li><strong>Analytics and Reporting:</strong> Detailed insights into account performance and engagement</li>
-                    <li><strong>Account Data Access:</strong> Retrieve and analyze Pinterest account information</li>
-                    <li><strong>Advertising Campaign Management:</strong> Create and manage Pinterest advertising campaigns for users and advertisers</li>
-                    <li><strong>Pinterest User Experience Enhancement:</strong> Tools to improve overall Pinterest user experience</li>
-                </ul>
             </div>
         </div>
     </section>
@@ -372,8 +381,6 @@
                 <p>Our team has extensive social media marketing experience and deep understanding of Pinterest platform characteristics and user behavior. By integrating with Pinterest's official API, we provide secure, efficient, and user-friendly services.</p>
                 <br>
                 <p>Whether you are a personal blogger, e-commerce business, or digital marketing agency, FLr can help you achieve better marketing results on the Pinterest platform.</p>
-                <br>
-                <p><strong>Developer Purpose:</strong> This application is developed for organizational and personal use to provide enhanced Pinterest content management capabilities through official Pinterest API integration.</p>
             </div>
         </div>
     </section>
@@ -385,12 +392,8 @@
                 <p><strong>Application Name:</strong> FLr</p>
                 <p><strong>Application ID:</strong> 1532175</p>
                 <p><strong>Company Name:</strong> FLr</p>
-                <p><strong>Service Type:</strong> Pinterest Content Management & Marketing Tool</p>
-                <p><strong>Target Audience:</strong> Pinterest Users, Content Creators, Advertisers</p>
-                <br>
-                <p>For any questions or collaboration inquiries, please contact us through our official channels. We are committed to protecting user privacy and strictly complying with data protection regulations.</p>
-                <br>
-                <p><strong>Privacy Commitment:</strong> We strictly adhere to Pinterest's API terms of service and maintain the highest standards of data protection and user privacy.</p>
+                <p><strong>Email:</strong> liaoran08@gmail.com</p>
+                <p><strong>Website:</strong> https://liaoran201012.github.io/FLr/</p>
             </div>
         </div>
     </section>
@@ -405,7 +408,17 @@
             <p>&copy; 2024 FLr. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Pinterest OAuth Script -->
+    <script>
+    function loginPinterest() {
+        const client_id = "1532175"; // 你的 Pinterest App ID
+        const redirect_uri = "https://liaoran201012.github.io/FLr/auth_redirect.html";
+        const scope = "pins:read,boards:read";
+        const state = "1234";
+        const url = `https://www.pinterest.com/oauth/?response_type=code&client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${scope}&state=${state}`;
+        window.location.href = url;
+    }
+    </script>
 </body>
-
 </html>
-
